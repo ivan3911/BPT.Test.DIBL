@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31320.298
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BPT.Test.DIBL.Database", "BPT.Test.DIBL.Database\BPT.Test.DIBL.Database.sqlproj", "{CC34A3AD-E94D-44E5-B08B-33A8566EA857}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BPT.Test.DIBL.API", "BPT.Test.DIBL.API\BPT.Test.DIBL.API.csproj", "{535951CE-7242-4F1A-9ADE-BA479A91997C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC34A3AD-E94D-44E5-B08B-33A8566EA857}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC34A3AD-E94D-44E5-B08B-33A8566EA857}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC34A3AD-E94D-44E5-B08B-33A8566EA857}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{CC34A3AD-E94D-44E5-B08B-33A8566EA857}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC34A3AD-E94D-44E5-B08B-33A8566EA857}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC34A3AD-E94D-44E5-B08B-33A8566EA857}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{535951CE-7242-4F1A-9ADE-BA479A91997C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{535951CE-7242-4F1A-9ADE-BA479A91997C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{535951CE-7242-4F1A-9ADE-BA479A91997C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{535951CE-7242-4F1A-9ADE-BA479A91997C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {29C80B1A-4C60-4D61-8849-B6B004A1D7C8}
+	EndGlobalSection
+EndGlobal
