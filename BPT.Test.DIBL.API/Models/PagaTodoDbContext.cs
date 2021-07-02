@@ -17,7 +17,7 @@ namespace BPT.Test.DIBL.API.Models
         {
         }
 
-        public virtual DbSet<Asignacione> Asignaciones { get; set; }
+        public virtual DbSet<Asignacion> Asignaciones { get; set; }
         public virtual DbSet<AsignacionesEstudiante> AsignacionesEstudiantes { get; set; }
         public virtual DbSet<Estudiante> Estudiantes { get; set; }
 
@@ -34,7 +34,7 @@ namespace BPT.Test.DIBL.API.Models
         {
             modelBuilder.HasAnnotation("Relational:Collation", "Modern_Spanish_CI_AS");
 
-            modelBuilder.Entity<Asignacione>(entity =>
+            modelBuilder.Entity<Asignacion>(entity =>
             {
                 entity.Property(e => e.Nombre)
                     .IsRequired()

@@ -1,4 +1,6 @@
-﻿using BPT.Test.DIBL.API.Models;
+﻿using AutoMapper;
+using BPT.Test.DIBL.API.DTOs;
+using BPT.Test.DIBL.API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -13,40 +15,63 @@ namespace BPT.Test.DIBL.API.Controllers
     public class StudentController : ControllerBase
     {
         private readonly PagaTodoDbContext context;
+        private readonly IMapper mapper;
 
-        public StudentController(PagaTodoDbContext context)
+        public StudentController(PagaTodoDbContext context, IMapper mapper)
         {
             this.context = context;
+            this.mapper = mapper;
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Estudiante>>> Get()
+        public async Task<ActionResult<List<StudentDTO>>> Get()
         {
-            return await context.Estudiantes.ToListAsync();
+            var students= await context.Estudiantes.ToListAsync();
+            return mapper.Map<List<StudentDTO>>(students);
         }
 
+        //[HttpGet("{id:int}")]
+        //public async Task<ActionResult<StudentDTO>> Get(int id)
+        //{
+        //    var student = await context.Estudiantes
+        //        .Include(studentDB=> studentDB.AsignacionesEstudiantes)
+        //        .ThenInclude(asignacionEstudianteDB=>asignacionEstudianteDB.IdAsignacionNavigation.Nombre)
+        //        .FirstOrDefaultAsync(x => x.Id == id);
+
+        //    if (student == null)
+        //        return NotFound();
+
+        //    return mapper.Map<StudentDTO>(student);
+        //}
+
         [HttpPost]
-        public async Task<ActionResult> Post(Estudiante estudiante)
+        public async Task<ActionResult> Post(StudentCreationDTO studentCreationDTO)
         {
-            context.Add(estudiante);
+            var exist = await context.Estudiantes.AnyAsync(x => x.Nombre == studentCreationDTO.Nombre);
+            if (exist)
+                return BadRequest($"Ya existe un estudiante con el nombre {studentCreationDTO.Nombre}");
+
+            var student = mapper.Map<Estudiante>(studentCreationDTO);
+
+            context.Add(student);
             await context.SaveChangesAsync();
             return Ok();
         }
 
         [HttpPut("{id:int}")] //api/estudiantes/id
-        public async Task<ActionResult> Put(Estudiante estudiante, int id) 
+        public async Task<ActionResult> Put(StudentCreationDTO studentCreationDTO, int id) 
         {
-            if (estudiante.Id != id) 
-                return BadRequest("El id del estudiante no coincide con el Id de la URL");
-            
             var existe = await context.Estudiantes.AnyAsync(x => x.Id == id);
 
             if (!existe)
                 return NotFound();
 
-            context.Update(estudiante);
+            var student = mapper.Map<Estudiante>(studentCreationDTO);
+            student.Id = id;
+
+            context.Update(student);
             await context.SaveChangesAsync();
-            return Ok();
+            return NoContent();
         }
 
         [HttpDelete("{id:int}")] //api/estudiantes/2
@@ -59,7 +84,7 @@ namespace BPT.Test.DIBL.API.Controllers
 
             context.Remove(new Estudiante() { Id = id });
             await context.SaveChangesAsync();
-            return Ok();
+            return NoContent();
         }
     }
 }

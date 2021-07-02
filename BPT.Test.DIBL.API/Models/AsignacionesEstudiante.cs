@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 
 #nullable disable
@@ -11,7 +11,7 @@ namespace BPT.Test.DIBL.API.Models
         public int? IdAsignacion { get; set; }
         public int? IdEstudiante { get; set; }
 
-        public virtual Asignacione IdAsignacionNavigation { get; set; }
+        public virtual Asignacion IdAsignacionNavigation { get; set; }
         public virtual Estudiante IdEstudianteNavigation { get; set; }
     }
 }
