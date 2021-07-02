@@ -43,17 +43,17 @@ namespace BPT.Test.DIBL.API.Controllers
 
 
         [HttpPost]
-        public async Task<ActionResult> Post(AssignmentCreationDTO assignmentCreationDTO)
+        public async Task<ActionResult<int>> Post(AssignmentCreationDTO assignmentCreationDTO)
         {
             var assignment = mapper.Map<Asignacion>(assignmentCreationDTO);
 
             context.Add(assignment);
             await context.SaveChangesAsync();
-            return Ok();
+            return assignment.Id;
         }
 
         [HttpPut("{id:int}")] //api/asignaciones/id
-        public async Task<ActionResult> Put(AssignmentCreationDTO assignmentCreationDTO, int id)
+        public async Task<ActionResult<int>> Put(AssignmentCreationDTO assignmentCreationDTO, int id)
         {
 
             var existe = await context.Asignaciones.AnyAsync(x => x.Id == id);
@@ -66,7 +66,7 @@ namespace BPT.Test.DIBL.API.Controllers
 
             context.Update(assignment);
             await context.SaveChangesAsync();
-            return NoContent();
+            return assignment.Id;
         }
 
         [HttpDelete("{id:int}")] //api/asignaciones/2

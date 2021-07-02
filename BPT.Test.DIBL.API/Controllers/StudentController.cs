@@ -45,7 +45,8 @@ namespace BPT.Test.DIBL.API.Controllers
         //}
 
         [HttpPost]
-        public async Task<ActionResult> Post(StudentCreationDTO studentCreationDTO)
+        //public async Task<ActionResult> Post(StudentCreationDTO studentCreationDTO)
+        public async Task<ActionResult<int>> Post(StudentCreationDTO studentCreationDTO)
         {
             var exist = await context.Estudiantes.AnyAsync(x => x.Nombre == studentCreationDTO.Nombre);
             if (exist)
@@ -55,11 +56,13 @@ namespace BPT.Test.DIBL.API.Controllers
 
             context.Add(student);
             await context.SaveChangesAsync();
-            return Ok();
+            return student.Id;
+            //return Ok();
         }
 
         [HttpPut("{id:int}")] //api/estudiantes/id
-        public async Task<ActionResult> Put(StudentCreationDTO studentCreationDTO, int id) 
+        //public async Task<ActionResult> Put(StudentCreationDTO studentCreationDTO, int id) 
+        public async Task<ActionResult<int>> Put(StudentCreationDTO studentCreationDTO, int id)
         {
             var existe = await context.Estudiantes.AnyAsync(x => x.Id == id);
 
@@ -71,7 +74,8 @@ namespace BPT.Test.DIBL.API.Controllers
 
             context.Update(student);
             await context.SaveChangesAsync();
-            return NoContent();
+            //return NoContent();
+            return student.Id;
         }
 
         [HttpDelete("{id:int}")] //api/estudiantes/2

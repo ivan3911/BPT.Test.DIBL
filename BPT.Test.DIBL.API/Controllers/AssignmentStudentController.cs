@@ -32,7 +32,7 @@ namespace BPT.Test.DIBL.API.Controllers
 
 
         [HttpPost]
-        public async Task<ActionResult> Post(AssignmentStudentCreationDTO assignmentStudentCreationDTO)
+        public async Task<ActionResult<int>> Post(AssignmentStudentCreationDTO assignmentStudentCreationDTO)
         {
             var exist_idAssignment = await context.Asignaciones.AnyAsync(x => x.Id == assignmentStudentCreationDTO.IdAsignacion);
             if (!exist_idAssignment)
@@ -46,7 +46,7 @@ namespace BPT.Test.DIBL.API.Controllers
 
             context.Add(assignmentStudent);
             await context.SaveChangesAsync();
-            return Ok();
+            return assignmentStudent.Id;
         }
 
         [HttpDelete("{id:int}")] //api/asignacionesestudiante/2

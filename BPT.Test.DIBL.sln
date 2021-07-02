@@ -7,6 +7,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BPT.Test.DIBL.Database", "B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BPT.Test.DIBL.API", "BPT.Test.DIBL.API\BPT.Test.DIBL.API.csproj", "{535951CE-7242-4F1A-9ADE-BA479A91997C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BPT.Test.DIBL.Client", "BPT.Test.DIBL.Client\BPT.Test.DIBL.Client.csproj", "{ECC033F6-3C66-48E5-AE4C-3D4EB494B9D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{535951CE-7242-4F1A-9ADE-BA479A91997C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{535951CE-7242-4F1A-9ADE-BA479A91997C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{535951CE-7242-4F1A-9ADE-BA479A91997C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECC033F6-3C66-48E5-AE4C-3D4EB494B9D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECC033F6-3C66-48E5-AE4C-3D4EB494B9D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECC033F6-3C66-48E5-AE4C-3D4EB494B9D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECC033F6-3C66-48E5-AE4C-3D4EB494B9D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
