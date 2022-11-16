@@ -14,4 +14,4 @@ Para llevarlo acabo se realizó el diseño y creación de la BD, desarrollo del 
 * Proyecto de aplicación Web .NET Core (API)
 * Proyecto de aplicación de Consola
 
-
+![Listado de APIs](https://github.com/ivan3911/BPT.Test.DIBL/blob/master/Swagger.png)
