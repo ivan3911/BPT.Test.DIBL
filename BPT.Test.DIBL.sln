@@ -1,13 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31320.298
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BPT.Test.DIBL.Database", "BPT.Test.DIBL.Database\BPT.Test.DIBL.Database.sqlproj", "{CC34A3AD-E94D-44E5-B08B-33A8566EA857}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BPT.Test.DIBL.API", "BPT.Test.DIBL.API\BPT.Test.DIBL.API.csproj", "{535951CE-7242-4F1A-9ADE-BA479A91997C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BPT.Test.DIBL.Client", "BPT.Test.DIBL.Client\BPT.Test.DIBL.Client.csproj", "{ECC033F6-3C66-48E5-AE4C-3D4EB494B9D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BPT.Test.DIBL.Client", "BPT.Test.DIBL.Client\BPT.Test.DIBL.Client.csproj", "{ECC033F6-3C66-48E5-AE4C-3D4EB494B9D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assets", "Assets", "{21960976-6CA2-467B-9C31-D1F3A2832C34}"
+	ProjectSection(SolutionItems) = preProject
+		Swagger.png = Swagger.png
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
